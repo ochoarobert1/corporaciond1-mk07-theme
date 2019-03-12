@@ -1,12 +1,13 @@
 ![alt tag](images/repo-logo.jpg)
 
-# corporaciond1 Wordpress Custom Theme #
+# Corporación D1 - Wordpress Custom Theme #
 
-* Version: 1.0.0
+* Version: 7.0.0
 * Design: [Robert Ochoa](http://www.robertochoa.com.ve/)
 * Development: [Robert Ochoa](http://www.robertochoa.com.ve/)
 
-Tema diseñado por [Robert Ochoa](http://www.robertochoa.com.ve/) para corporaciond1 Este tema custom fue construido en su totalidad, pasando por su etapa de Wireframing, rearmado, version anterior e implementación en hosting externo.
+Tema diseñado por [Robert Ochoa](http://www.robertochoa.com.ve/) para Corporación D1.
+Este tema custom fue construido en su totalidad, pasando por su etapa de Wireframing, rearmado, version anterior e implementación en hosting externo.
 
 ### Componentes Principales ###
 

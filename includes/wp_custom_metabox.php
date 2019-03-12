@@ -1,7 +1,7 @@
 <?php
-add_action( 'cmb2_admin_init', 'corporaciond1_register_demo_metabox' );
-function yourprefix_register_demo_metabox() {
-    $prefix = 'corporaciond1_';
+add_action( 'cmb2_admin_init', 'corporaciond1_register_metabox' );
+function corporaciond1_register_metabox() {
+    $prefix = 'd1_';
 
     $cmb_metabox = new_cmb2_box( array(
         'id'            => $prefix . 'metabox',
