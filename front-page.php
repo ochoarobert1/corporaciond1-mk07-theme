@@ -1,16 +1,19 @@
 <?php get_header(); ?>
 <?php the_post(); ?>
+<?php $array_titles = array(); ?>
 <main class="container-fluid p-0" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
     <div class="row no-gutters">
         <div id="fullpage" class="page-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <section class="first-section section">
                 <div class="wrapper">
+                    <?php $array_titles[] = __('Inicio', 'corporaciond1'); ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="" class="img-fluid img-main-logo" />
                 </div>
             </section>
             <?php $array_services = new WP_Query(array('post_type' => 'servicios', 'posts_per_page' => -1, 'order' => 'ASC', 'orderby' => 'date')); ?>
             <?php if ($array_services->have_posts()) : ?>
             <?php while ($array_services->have_posts()) : $array_services->the_post(); ?>
+            <?php $array_titles[] = get_the_title(); ?>
             <section class="section">
                 <div class="wrapper">
                     <article class="container">
@@ -36,6 +39,7 @@
             <?php endif; ?>
             <?php wp_reset_query(); ?>
             <?php $page = get_page_by_path('inicio/home-seccion-1'); ?>
+            <?php $array_titles[] = __('Empresa 360', 'corporaciond1'); ?>
             <section class="section">
                 <div class="wrapper">
                     <div class="container">
@@ -51,6 +55,7 @@
                 </div>
             </section>
             <?php $page = get_page_by_path('inicio/home-seccion-2'); ?>
+            <?php $array_titles[] = __('Behance D1', 'corporaciond1'); ?>
             <section class="section">
                 <div class="wrapper">
                     <div class="container">
@@ -66,6 +71,7 @@
                 </div>
             </section>
             <?php $page = get_page_by_path('inicio/home-seccion-3'); ?>
+            <?php $array_titles[] = __('Cualquier Cosa en Cualquier Momento', 'corporaciond1'); ?>
             <section class="section">
                 <div class="wrapper">
                     <div class="container">
@@ -86,6 +92,7 @@
                     <div class="container">
                         <div class="row no-gutters align-items-center">
                             <div class="clients-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <?php $array_titles[] = __('Clientes', 'corporaciond1'); ?>
                                 <h2><?php _e('Clientes', 'corporaciond1'); ?></h2>
                                 <div class="clients-slider-container owl-carousel">
                                     <?php $array_clients = new WP_Query(array('post_type' => 'clientes', 'posts_per_page' => -1, 'order' => 'ASC', 'orderby' => 'date')); ?>
@@ -108,6 +115,7 @@
             <section class="section section-footer">
                 <div class="wrapper">
                     <div class="container">
+                        <?php $array_titles[] = __('Info Adicional', 'corporaciond1'); ?>
                         <div class="row no-gutters align-items-center">
                             <?php if ( is_active_sidebar( 'footer_section' ) ) : ?>
                             <ul class="footer-item col-xl col-lg col-md col-sm col-12">
@@ -119,6 +127,7 @@
                                 <?php dynamic_sidebar( 'footer_section-2' ); ?>
                             </ul>
                             <?php endif; ?>
+                            <?php $encoded_array = json_encode($array_titles); ?>
                         </div>
                     </div>
                 </div>
@@ -126,14 +135,18 @@
         </div>
     </div>
 </main>
+
 <script type="text/javascript">
     /* FRONTPAGE */
     jQuery(document).ready(function() {
         jQuery('#fullpage').fullpage({
             //Navegación
             menu: '#menu',
-            anchors: ['firstPage', 'secondPage'],
+            anchors: ['start', 'secondPage'],
             navigation: true,
+            navigationPosition: 'right',
+            navigationTooltips: <?php echo $encoded_array; ?>,
+            showActiveTooltip: false,
 
             //Desplazamiento
             css3: true,
