@@ -104,15 +104,15 @@ function corporaciond1_widgets_init() {
         'after_title'   => '</h2>',
     ) );
 
-    //    register_sidebar( array(
-    //        'name' => __( 'Shop Sidebar', 'corporaciond1' ),
-    //        'id' => 'shop_sidebar',
-    //        'description' => __( 'Estos widgets seran vistos en Tienda y Categorias de Producto', 'corporaciond1' ),
-    //        'before_widget' => '<li id='%1$s' class='widget %2$s'>',
-    //        'after_widget'  => '</li>',
-    //        'before_title'  => '<h2 class='widgettitle'>',
-    //        'after_title'   => '</h2>',
-    //    ) );
+    register_sidebars(2 , array(
+        'name'          => __('Pie de Pagina %d', 'corporaciond1'),
+        'id'            => 'footer_section',
+        'description'   => __( 'Estos widgets seran vistos en el pié de página', 'corporaciond1' ),
+        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</li>',
+        'before_title'  => '<h2 class="widgettitle">',
+        'after_title'   => '</h2>'
+    ) );
 }
 
 /* --------------------------------------------------------------
@@ -164,6 +164,8 @@ if ( function_exists('add_theme_support') ) {
 }
 if ( function_exists('add_image_size') ) {
     add_image_size('avatar', 100, 100, true);
+    add_image_size('home_icon', 150, 150, true);
+    add_image_size('home_clients', 150, 150, false);
     add_image_size('blog_img', 276, 217, true);
     add_image_size('single_img', 636, 297, true );
 }

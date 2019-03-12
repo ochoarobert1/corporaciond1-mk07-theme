@@ -15,7 +15,7 @@ body {
 }
 body {
   font-weight: 400;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
 }
 a {
   -webkit-transition: all 0.2s ease-in-out;
@@ -28,4 +28,166 @@ a:hover {
 }
 .page-container {
   min-height: 85vh;
+}
+/* --------------------------------------------------------------
+1.- HEADER
+-------------------------------------------------------------- */
+.menu-opener {
+  position: fixed;
+  top: 50px;
+  left: 20px;
+  z-index: 99;
+  cursor: pointer;
+}
+.menu-opener span {
+  display: block;
+  width: 33px;
+  height: 2px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #3f3e3e;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+.menu-opener span:first-child {
+  transform-origin: 0% 0%;
+}
+.menu-opener span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  background: #ffffff;
+  width: 300px;
+  height: 100%;
+  box-shadow: 0 0 36px #d6d6d6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.menu-container .img-menu-logo {
+  margin: 5rem auto;
+  margin-bottom: 1rem;
+  max-width: 200px;
+  display: block;
+}
+.menu-container-hidden {
+  left: -100%;
+}
+.menu-opener-show span {
+  opacity: 1;
+  transform: rotate(-45deg) translate(-2px, -1px);
+  background: #232323;
+}
+.menu-opener-show span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+.menu-opener-show span:nth-last-child(2) {
+  transform: rotate(45deg) translate(-9px, -9px);
+}
+.brochure-link-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 20;
+}
+.brochure-link-container .btn-brochure {
+  border: 1px solid #3f3e3e;
+  border-radius: 0;
+  color: #3f3e3e;
+  padding: .5rem 1rem;
+  font-weight: 300;
+  font-size: 1.1rem;
+}
+.brochure-link-container .btn-brochure .fa {
+  padding-left: .3rem;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-main-logo {
+  max-width: 550px;
+}
+.page-container section:nth-child(2n+1) {
+  background: #cccccc;
+}
+.page-container section .service-title-container h3 {
+  color: #3f3e3e;
+  font-size: 13rem;
+  line-height: 12.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.page-container section .service-title-container h3 span {
+  display: block;
+}
+.page-container section .service-info-container {
+  color: #3f3e3e;
+  padding-left: 1.5rem;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  font-weight: 100;
+}
+.page-container section .service-info-container img {
+  margin-bottom: 1rem;
+}
+.page-container section .page-image-container img {
+  display: block;
+  margin: 0 auto;
+}
+.page-container section .page-info-container {
+  color: #3f3e3e;
+  padding-left: 1.5rem;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  font-weight: 100;
+}
+.page-container section .page-info-container img {
+  margin-bottom: 1rem;
+}
+.page-container section .page-full-image-container img {
+  margin-bottom: 1rem;
+}
+.page-container .section-clients {
+  background: #000000 !important;
+}
+.page-container .section-clients h2 {
+  font-size: 13rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #ffffff;
+}
+.page-container .section-clients .clients-item .clients-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 195px;
+  padding: 0.5rem;
+}
+.page-container .section-footer {
+  background: #000000 !important;
+  color: #ffffff;
+}
+.page-container .section-footer .footer-item {
+  list-style: none;
+  padding: 1rem !important;
+  font-size: 1.1rem;
+  font-weight: 100;
+}
+.page-container .section-footer .footer-item a {
+  color: #ffffff;
+  font-weight: 500;
+}
+.page-container .section-footer .footer-item h5 {
+  font-size: .9rem;
+  margin-top: 1.5rem;
 }
